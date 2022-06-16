@@ -1,0 +1,14 @@
+{
+	"OUTPUT": "/home/tigergraph/DATA_GENERATOR/2/",
+	"MODULES": [{
+		"COMMENT": "Generate Edges.",
+		"TYPE": "CREATE",
+		"EDGE": "LIKES",
+		"SAMPLE": {
+			"PATH": "/home/tigergraph/bi-sf1-composite-projected-fk/graphs/csv/bi/composite-projected-fk/initial_snapshot/dynamic/Person_likes_Comment/likes.csv",
+			"SEP": "|",
+			"HEADER": true,
+			"creationDate": "$0"
+		}
+	}]
+}

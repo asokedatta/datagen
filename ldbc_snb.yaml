@@ -1,0 +1,717 @@
+EdgeTypes: 
+- Attributes: []
+  EdgeId: 0
+  FromVertexTypeList: 
+  - Forum
+  FromVertexTypeName: Forum
+  GraphId: 0
+  IsDirected: true
+  Name: CONTAINER_OF
+  ReverseEdgeId: 1
+  ReverseEdgeName: CONTAINER_OF_REVERSE
+  ToVertexTypeList: 
+  - Post
+  ToVertexTypeName: Post
+- Attributes: []
+  EdgeId: 1
+  FromVertexTypeList: 
+  - Post
+  FromVertexTypeName: Post
+  GraphId: 0
+  IsDirected: true
+  Name: CONTAINER_OF_REVERSE
+  ReverseEdgeId: 0
+  ReverseEdgeName: CONTAINER_OF
+  ToVertexTypeList: 
+  - Forum
+  ToVertexTypeName: Forum
+- Attributes: []
+  EdgeId: 2
+  EdgePairs: 
+    Comment: 
+    - Person
+    Post: 
+    - Person
+  FromVertexTypeList: 
+  - Comment
+  - Post
+  FromVertexTypeName: '*'
+  GraphId: 0
+  IsDirected: true
+  Name: HAS_CREATOR
+  ReverseEdgeId: 3
+  ReverseEdgeName: HAS_CREATOR_REVERSE
+  ToVertexTypeList: 
+  - Person
+  ToVertexTypeName: Person
+  isEdgePairs: true
+- Attributes: []
+  EdgeId: 3
+  EdgePairs: 
+    Person: 
+    - Comment
+    - Post
+  FromVertexTypeList: 
+  - Person
+  FromVertexTypeName: Person
+  GraphId: 0
+  IsDirected: true
+  Name: HAS_CREATOR_REVERSE
+  ReverseEdgeId: 2
+  ReverseEdgeName: HAS_CREATOR
+  ToVertexTypeList: 
+  - Comment
+  - Post
+  ToVertexTypeName: '*'
+  isEdgePairs: true
+- Attributes: []
+  EdgeId: 4
+  FromVertexTypeList: 
+  - Person
+  FromVertexTypeName: Person
+  GraphId: 0
+  IsDirected: true
+  Name: HAS_INTEREST
+  ReverseEdgeId: 5
+  ReverseEdgeName: HAS_INTEREST_REVERSE
+  ToVertexTypeList: 
+  - Tag
+  ToVertexTypeName: Tag
+- Attributes: []
+  EdgeId: 5
+  FromVertexTypeList: 
+  - Tag
+  FromVertexTypeName: Tag
+  GraphId: 0
+  IsDirected: true
+  Name: HAS_INTEREST_REVERSE
+  ReverseEdgeId: 4
+  ReverseEdgeName: HAS_INTEREST
+  ToVertexTypeList: 
+  - Person
+  ToVertexTypeName: Person
+- Attributes: 
+  - AttributeName: joinDate
+    AttributeType: INT
+    DateTime: true
+  EdgeId: 6
+  FromVertexTypeList: 
+  - Forum
+  FromVertexTypeName: Forum
+  GraphId: 0
+  IsDirected: true
+  Name: HAS_MEMBER
+  ReverseEdgeId: 7
+  ReverseEdgeName: HAS_MEMBER_REVERSE
+  ToVertexTypeList: 
+  - Person
+  ToVertexTypeName: Person
+- Attributes: 
+  - AttributeName: joinDate
+    AttributeType: INT
+    DateTime: true
+  EdgeId: 7
+  FromVertexTypeList: 
+  - Person
+  FromVertexTypeName: Person
+  GraphId: 0
+  IsDirected: true
+  Name: HAS_MEMBER_REVERSE
+  ReverseEdgeId: 6
+  ReverseEdgeName: HAS_MEMBER
+  ToVertexTypeList: 
+  - Forum
+  ToVertexTypeName: Forum
+- Attributes: []
+  EdgeId: 8
+  FromVertexTypeList: 
+  - Forum
+  FromVertexTypeName: Forum
+  GraphId: 0
+  IsDirected: true
+  Name: HAS_MODERATOR
+  ReverseEdgeId: 9
+  ReverseEdgeName: HAS_MODERATOR_REVERSE
+  ToVertexTypeList: 
+  - Person
+  ToVertexTypeName: Person
+- Attributes: []
+  EdgeId: 9
+  FromVertexTypeList: 
+  - Person
+  FromVertexTypeName: Person
+  GraphId: 0
+  IsDirected: true
+  Name: HAS_MODERATOR_REVERSE
+  ReverseEdgeId: 8
+  ReverseEdgeName: HAS_MODERATOR
+  ToVertexTypeList: 
+  - Forum
+  ToVertexTypeName: Forum
+- Attributes: []
+  EdgeId: 10
+  EdgePairs: 
+    Comment: 
+    - Tag
+    Post: 
+    - Tag
+    Forum: 
+    - Tag
+  FromVertexTypeList: 
+  - Comment
+  - Post
+  - Forum
+  FromVertexTypeName: '*'
+  GraphId: 0
+  IsDirected: true
+  Name: HAS_TAG
+  ReverseEdgeId: 11
+  ReverseEdgeName: HAS_TAG_REVERSE
+  ToVertexTypeList: 
+  - Tag
+  ToVertexTypeName: Tag
+  isEdgePairs: true
+- Attributes: []
+  EdgeId: 11
+  EdgePairs: 
+    Tag: 
+    - Comment
+    - Post
+    - Forum
+  FromVertexTypeList: 
+  - Tag
+  FromVertexTypeName: Tag
+  GraphId: 0
+  IsDirected: true
+  Name: HAS_TAG_REVERSE
+  ReverseEdgeId: 10
+  ReverseEdgeName: HAS_TAG
+  ToVertexTypeList: 
+  - Comment
+  - Post
+  - Forum
+  ToVertexTypeName: '*'
+  isEdgePairs: true
+- Attributes: []
+  EdgeId: 12
+  FromVertexTypeList: 
+  - Tag
+  FromVertexTypeName: Tag
+  GraphId: 0
+  IsDirected: true
+  Name: HAS_TYPE
+  ReverseEdgeId: 13
+  ReverseEdgeName: HAS_TYPE_REVERSE
+  ToVertexTypeList: 
+  - TagClass
+  ToVertexTypeName: TagClass
+- Attributes: []
+  EdgeId: 13
+  FromVertexTypeList: 
+  - TagClass
+  FromVertexTypeName: TagClass
+  GraphId: 0
+  IsDirected: true
+  Name: HAS_TYPE_REVERSE
+  ReverseEdgeId: 12
+  ReverseEdgeName: HAS_TYPE
+  ToVertexTypeList: 
+  - Tag
+  ToVertexTypeName: Tag
+- Attributes: []
+  EdgeId: 14
+  EdgePairs: 
+    Comment: 
+    - Country
+    Company: 
+    - Country
+    University: 
+    - City
+    Post: 
+    - Country
+    Person: 
+    - City
+  FromVertexTypeList: []
+  FromVertexTypeName: '*'
+  GraphId: 0
+  IsDirected: true
+  Name: IS_LOCATED_IN
+  ReverseEdgeId: 15
+  ReverseEdgeName: IS_LOCATED_IN_REVERSE
+  ToVertexTypeList: []
+  ToVertexTypeName: '*'
+  isEdgePairs: true
+- Attributes: []
+  EdgeId: 15
+  EdgePairs: 
+    Country: 
+    - Comment
+    - Company
+    - Post
+    City: 
+    - University
+    - Person
+  FromVertexTypeList: []
+  FromVertexTypeName: '*'
+  GraphId: 0
+  IsDirected: true
+  Name: IS_LOCATED_IN_REVERSE
+  ReverseEdgeId: 14
+  ReverseEdgeName: IS_LOCATED_IN
+  ToVertexTypeList: []
+  ToVertexTypeName: '*'
+  isEdgePairs: true
+- Attributes: []
+  EdgeId: 16
+  EdgePairs: 
+    Country: 
+    - Continent
+    City: 
+    - Country
+  FromVertexTypeList: []
+  FromVertexTypeName: '*'
+  GraphId: 0
+  IsDirected: true
+  Name: IS_PART_OF
+  ReverseEdgeId: 17
+  ReverseEdgeName: IS_PART_OF_REVERSE
+  ToVertexTypeList: []
+  ToVertexTypeName: '*'
+  isEdgePairs: true
+- Attributes: []
+  EdgeId: 17
+  EdgePairs: 
+    Continent: 
+    - Country
+    Country: 
+    - City
+  FromVertexTypeList: []
+  FromVertexTypeName: '*'
+  GraphId: 0
+  IsDirected: true
+  Name: IS_PART_OF_REVERSE
+  ReverseEdgeId: 16
+  ReverseEdgeName: IS_PART_OF
+  ToVertexTypeList: []
+  ToVertexTypeName: '*'
+  isEdgePairs: true
+- Attributes: []
+  EdgeId: 18
+  FromVertexTypeList: 
+  - TagClass
+  FromVertexTypeName: TagClass
+  GraphId: 0
+  IsDirected: true
+  Name: IS_SUBCLASS_OF
+  ReverseEdgeId: 19
+  ReverseEdgeName: IS_SUBCLASS_OF_REVERSE
+  ToVertexTypeList: 
+  - TagClass
+  ToVertexTypeName: TagClass
+- Attributes: []
+  EdgeId: 19
+  FromVertexTypeList: 
+  - TagClass
+  FromVertexTypeName: TagClass
+  GraphId: 0
+  IsDirected: true
+  Name: IS_SUBCLASS_OF_REVERSE
+  ReverseEdgeId: 18
+  ReverseEdgeName: IS_SUBCLASS_OF
+  ToVertexTypeList: 
+  - TagClass
+  ToVertexTypeName: TagClass
+- Attributes: 
+  - AttributeName: creationDate
+    AttributeType: INT
+    DateTime: true
+  EdgeId: 20
+  FromVertexTypeList: 
+  - Person
+  FromVertexTypeName: Person
+  GraphId: 0
+  Name: KNOWS
+  ToVertexTypeList: 
+  - Person
+  ToVertexTypeName: Person
+- Attributes: 
+  - AttributeName: creationDate
+    AttributeType: INT
+    DateTime: true
+  EdgeId: 21
+  EdgePairs: 
+    Person: 
+    - Comment
+    - Post
+  FromVertexTypeList: 
+  - Person
+  FromVertexTypeName: Person
+  GraphId: 0
+  IsDirected: true
+  Name: LIKES
+  ReverseEdgeId: 22
+  ReverseEdgeName: LIKES_REVERSE
+  ToVertexTypeList: 
+  - Comment
+  - Post
+  ToVertexTypeName: '*'
+  isEdgePairs: true
+- Attributes: 
+  - AttributeName: creationDate
+    AttributeType: INT
+    DateTime: true
+  EdgeId: 22
+  EdgePairs: 
+    Comment: 
+    - Person
+    Post: 
+    - Person
+  FromVertexTypeList: 
+  - Comment
+  - Post
+  FromVertexTypeName: '*'
+  GraphId: 0
+  IsDirected: true
+  Name: LIKES_REVERSE
+  ReverseEdgeId: 21
+  ReverseEdgeName: LIKES
+  ToVertexTypeList: 
+  - Person
+  ToVertexTypeName: Person
+  isEdgePairs: true
+- Attributes: []
+  EdgeId: 23
+  EdgePairs: 
+    Comment: 
+    - Comment
+    - Post
+  FromVertexTypeList: 
+  - Comment
+  FromVertexTypeName: Comment
+  GraphId: 0
+  IsDirected: true
+  Name: REPLY_OF
+  ReverseEdgeId: 24
+  ReverseEdgeName: REPLY_OF_REVERSE
+  ToVertexTypeList: 
+  - Comment
+  - Post
+  ToVertexTypeName: '*'
+  isEdgePairs: true
+- Attributes: []
+  EdgeId: 24
+  EdgePairs: 
+    Comment: 
+    - Comment
+    Post: 
+    - Comment
+  FromVertexTypeList: 
+  - Comment
+  - Post
+  FromVertexTypeName: '*'
+  GraphId: 0
+  IsDirected: true
+  Name: REPLY_OF_REVERSE
+  ReverseEdgeId: 23
+  ReverseEdgeName: REPLY_OF
+  ToVertexTypeList: 
+  - Comment
+  ToVertexTypeName: Comment
+  isEdgePairs: true
+- Attributes: 
+  - AttributeName: classYear
+    AttributeType: INT
+  EdgeId: 25
+  FromVertexTypeList: 
+  - Person
+  FromVertexTypeName: Person
+  GraphId: 0
+  IsDirected: true
+  Name: STUDY_AT
+  ReverseEdgeId: 26
+  ReverseEdgeName: STUDY_AT_REVERSE
+  ToVertexTypeList: 
+  - University
+  ToVertexTypeName: University
+- Attributes: 
+  - AttributeName: classYear
+    AttributeType: INT
+  EdgeId: 26
+  FromVertexTypeList: 
+  - University
+  FromVertexTypeName: University
+  GraphId: 0
+  IsDirected: true
+  Name: STUDY_AT_REVERSE
+  ReverseEdgeId: 25
+  ReverseEdgeName: STUDY_AT
+  ToVertexTypeList: 
+  - Person
+  ToVertexTypeName: Person
+- Attributes: 
+  - AttributeName: workFrom
+    AttributeType: INT
+  EdgeId: 27
+  FromVertexTypeList: 
+  - Person
+  FromVertexTypeName: Person
+  GraphId: 0
+  IsDirected: true
+  Name: WORK_AT
+  ReverseEdgeId: 28
+  ReverseEdgeName: WORK_AT_REVERSE
+  ToVertexTypeList: 
+  - Company
+  ToVertexTypeName: Company
+- Attributes: 
+  - AttributeName: workFrom
+    AttributeType: INT
+  EdgeId: 28
+  FromVertexTypeList: 
+  - Company
+  FromVertexTypeName: Company
+  GraphId: 0
+  IsDirected: true
+  Name: WORK_AT_REVERSE
+  ReverseEdgeId: 27
+  ReverseEdgeName: WORK_AT
+  ToVertexTypeList: 
+  - Person
+  ToVertexTypeName: Person
+GraphCode: Bi+xuXXu6y+xuXXu649Diq6HaD12Kp0dFYZriZ1T7HcdpfU3Ax8HV9bWwSVwIMsfHe+yhXt9z9XgVOaXtP/OJGUvSj497yWsR3/QDkNwCFtJbww2vuMJVMLgZ5TTr8/5A80em15mATDdTGgk4cybEapZc9zyg1Pxonb2xEciALJ/9742z1VTzmSSqHM0R11dAP3i6ZD34e7IUJnD33YDbJFZpkm0/3n2qW8ZNY5XkcEFPmv8GzTGkY/TJsJJG+RHEM4ym+XcdNTqX+MD3Vpcdqt2IrNcOc2OcXJysRE2CHOX/6sgJFOLm0VSXiFmbE2CIJELabew32VdhxaswzWqRVJQsXlIcJD/iCgX2iBwoZPR6BSUkJYIVmGYqZbO1OAI/+TENAWsMRnvEYf6Lpzr6P14tvGEj/2kTI1bDsiUf9rd8LG+fU5OKtl2cxpgmx4+P3KI1weUvOtK5EPvpW2DNNBAYeSzrNNJ0m2gci02/Blt51+smB6Ybkcvs/WX7sMI8g/iFWD1xIdoPXYqnR0Vhms=
+GraphConfigVersion: 0
+GraphId: 1
+GraphName: ldbc_snb
+JsonAPIVersion: v2
+LatestEdgeId: 29
+LatestVertexId: 11
+SegSizeInBits: 20
+VertexTypes: 
+- Attributes: 
+  - AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  - AttributeName: creationDate
+    AttributeType: INT
+    DateTime: true
+  - AttributeName: locationIP
+    AttributeType: STRING
+  - AttributeName: browserUsed
+    AttributeType: STRING
+  - AttributeName: content
+    AttributeType: STRING
+  - AttributeName: length
+    AttributeType: UINT
+  GraphId: 0
+  Name: Comment
+  PrimaryId: 
+    AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  Primary_Id_As_Attribute: TRUE
+  VertexId: 0
+  VertexStatisticsType: 2
+- Attributes: 
+  - AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  - AttributeName: imageFile
+    AttributeType: STRING
+  - AttributeName: creationDate
+    AttributeType: INT
+    DateTime: true
+  - AttributeName: locationIP
+    AttributeType: STRING
+  - AttributeName: browserUsed
+    AttributeType: STRING
+  - AttributeName: lang
+    AttributeType: STRING
+  - AttributeName: content
+    AttributeType: STRING
+  - AttributeName: length
+    AttributeType: UINT
+  GraphId: 0
+  Name: Post
+  PrimaryId: 
+    AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  Primary_Id_As_Attribute: TRUE
+  VertexId: 1
+  VertexStatisticsType: 2
+- Attributes: 
+  - AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  - AttributeName: name
+    AttributeType: STRING
+  - AttributeName: url
+    AttributeType: STRING
+  GraphId: 0
+  Name: Company
+  PrimaryId: 
+    AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  Primary_Id_As_Attribute: TRUE
+  VertexId: 2
+  VertexStatisticsType: 2
+- Attributes: 
+  - AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  - AttributeName: name
+    AttributeType: STRING
+  - AttributeName: url
+    AttributeType: STRING
+  GraphId: 0
+  Name: University
+  PrimaryId: 
+    AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  Primary_Id_As_Attribute: TRUE
+  VertexId: 3
+  VertexStatisticsType: 2
+- Attributes: 
+  - AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  - AttributeName: name
+    AttributeType: STRING
+  - AttributeName: url
+    AttributeType: STRING
+  GraphId: 0
+  Name: City
+  PrimaryId: 
+    AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  Primary_Id_As_Attribute: TRUE
+  VertexId: 4
+  VertexStatisticsType: 2
+- Attributes: 
+  - AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  - AttributeName: name
+    AttributeType: STRING
+  - AttributeName: url
+    AttributeType: STRING
+  GraphId: 0
+  Name: Country
+  PrimaryId: 
+    AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  Primary_Id_As_Attribute: TRUE
+  VertexId: 5
+  VertexStatisticsType: 2
+- Attributes: 
+  - AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  - AttributeName: name
+    AttributeType: STRING
+  - AttributeName: url
+    AttributeType: STRING
+  GraphId: 0
+  Name: Continent
+  PrimaryId: 
+    AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  Primary_Id_As_Attribute: TRUE
+  VertexId: 6
+  VertexStatisticsType: 2
+- Attributes: 
+  - AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  - AttributeName: title
+    AttributeType: STRING
+  - AttributeName: creationDate
+    AttributeType: INT
+    DateTime: true
+  GraphId: 0
+  Name: Forum
+  PrimaryId: 
+    AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  Primary_Id_As_Attribute: TRUE
+  VertexId: 7
+  VertexStatisticsType: 2
+- Attributes: 
+  - AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  - AttributeName: firstName
+    AttributeType: STRING
+  - AttributeName: lastName
+    AttributeType: STRING
+  - AttributeName: gender
+    AttributeType: STRING
+  - AttributeName: birthday
+    AttributeType: INT
+    DateTime: true
+  - AttributeName: creationDate
+    AttributeType: INT
+    DateTime: true
+  - AttributeName: locationIP
+    AttributeType: STRING
+  - AttributeName: browserUsed
+    AttributeType: STRING
+  - AttributeName: speaks
+    AttributeType: STRING_SET
+  - AttributeName: email
+    AttributeType: STRING_SET
+  GraphId: 0
+  Name: Person
+  PrimaryId: 
+    AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  Primary_Id_As_Attribute: TRUE
+  VertexId: 8
+  VertexStatisticsType: 2
+- Attributes: 
+  - AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  - AttributeName: name
+    AttributeType: STRING
+  - AttributeName: url
+    AttributeType: STRING
+  GraphId: 0
+  Name: Tag
+  PrimaryId: 
+    AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  Primary_Id_As_Attribute: TRUE
+  VertexId: 9
+  VertexStatisticsType: 2
+- Attributes: 
+  - AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  - AttributeName: name
+    AttributeType: STRING
+  - AttributeName: url
+    AttributeType: STRING
+  GraphId: 0
+  Name: TagClass
+  PrimaryId: 
+    AttributeName: id
+    AttributeType: UINT
+    PrimaryIdAsAttribute: true
+  Primary_Id_As_Attribute: TRUE
+  VertexId: 10
+  VertexStatisticsType: 2
+graphCreator: tigergraph
+supportVersions: 
+- v2
+tagGraphList: []
+tagList: []
+type: BASE
