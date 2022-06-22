@@ -1,5 +1,5 @@
 {
-	"OUTPUT": "./",
+	"OUTPUT": "/home/tigergraph/datagen/data",
 	"SEP": "|",
 	"COMMENT": ["SF=1 for LDBC_SNB dataset, runtime is ~76s."],
 	"AUTO_FILL_VERTEX": "RANDOM",

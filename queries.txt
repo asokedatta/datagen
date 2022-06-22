@@ -1,0 +1,29 @@
+# Check vertex elements
+select * from Post limit 4
+
+# Check edge elements
+select count(*) from Person -(KNOWS)-> Person
+select * from Person -(KNOWS)-> Person WHERE from_id == 2 # Count query fails for this example
+select * from Forum -(CONTAINER_OF)-> Post WHERE from_id == 1
+select count(*) from Forum -(CONTAINER_OF)-> Post
+
+select count(*) from FROM Comment -(HAS_CREATOR)-> Person
+select count(*) from Post -(HAS_CREATOR)-> Person
+HAS_CREATOR (FROM Comment|Post, TO Person)
+
+HAS_INTEREST (FROM Person, TO Tag)
+HAS_MEMBER (FROM Forum, TO Person, joinDate DATETIME)
+HAS_MODERATOR (FROM Forum, TO Person)
+
+HAS_TAG (FROM Comment|Post|Forum, TO Tag)
+HAS_TYPE (FROM Tag, TO TagClass)
+
+select count(*) from Comment -(IS_LOCATED_IN)-> Country
+IS_LOCATED_IN (FROM Comment, TO Country | FROM Post, TO Country | FROM Company, TO Country | FROM Person, TO City | FROM University, TO City)
+
+IS_PART_OF (FROM City, TO Country | FROM Country, TO Continent)
+IS_SUBCLASS_OF (FROM TagClass, TO TagClass)
+LIKES (FROM Person, TO Comment|Post, creationDate DATETIME)
+REPLY_OF (FROM Comment, TO Comment|Post)
+STUDY_AT (FROM Person, TO University, classYear INT)
+WORK_AT (FROM Person, TO Company, workFrom INT)
