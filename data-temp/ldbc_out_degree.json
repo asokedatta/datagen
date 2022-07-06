@@ -1,0 +1,48 @@
+{
+	"OUTPUT": "/home/tigergraph/datagen/data-temp/",
+	"SEP": "|",
+	"COMMENT": ["SF=1 for LDBC_SNB dataset, runtime is ~76s."],
+	"AUTO_FILL_VERTEX": "RANDOM",
+	"AUTO_FILL_EDGE": "RANDOM",
+	"APPEND": false,
+	"SEED": 1,
+	"MODULES": [{
+			"TYPE": "READ",
+			"VERTEX": "Person",
+            "PATH" : "/home/tigergraph/datagen/data-temp/Person/0.csv",
+            "HEADER" : true,
+            "PRIMARY_ID":"$0",
+            "NOT_REPEAT":true,
+			"ATTRIBUTE": {
+				"id":"$0",
+				"firstName": "$2",
+				"lastName": "$3",
+				"gender": "$4",
+				"birthday": "$5",
+				"creationDate": "$6",
+				"locationIP": "$7",
+				"browserUsed": "$8",
+				"speaks": "$9",
+				"email": "$10"
+			}
+		},
+		{
+			"TYPE": "READ",
+			"VERTEX": "City",
+            "PATH" : "/home/tigergraph/datagen/data-temp/City/0.csv",
+            "HEADER" : true,
+            "PRIMARY_ID":"$0",
+            "NOT_REPEAT":true,
+			"ATTRIBUTE": {
+				"id": "$0",
+				"name": "$2",
+				"url": "$3"
+			}
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Person_IS_LOCATED_IN_City",
+			"IN_DEG": [1, 1]
+		}
+	]
+}
