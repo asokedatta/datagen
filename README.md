@@ -10,6 +10,7 @@ Step 3 :  Run gsql_data_generator.
 Replace config.yaml and input.json from files provided in this repo.
 
 Please find more details in below link.
-https://graphsql.atlassian.net/wiki/spaces/QA/pages/908034073/Usage+of+New+data+generator
+1) https://graphsql.atlassian.net/wiki/spaces/QA/pages/908034073/Usage+of+New+data+generator
+2) https://graphsql.atlassian.net/wiki/spaces/~628b9e669c617b006a6ca980/pages/2788786760/GSQL+data+generator+Controlling+the+distribution+of+data
 
  
