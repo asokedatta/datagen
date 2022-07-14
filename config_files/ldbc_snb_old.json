@@ -1,0 +1,522 @@
+{
+	"OUTPUT": "/home/tigergraph/datagen/data",
+	"SEP": "|",
+	"COMMENT": ["SF=1 for LDBC_SNB dataset, runtime is ~76s."],
+	"AUTO_FILL_VERTEX": "RANDOM",
+	"AUTO_FILL_EDGE": "RANDOM",
+	"APPEND": false,
+	"SEED": 1,
+	"NUM_VERTEX": {
+		"Person": 10000,
+		"Comment": 200521,
+		"Forum": 904,
+		"Post": 100036,
+		"Company": 15,
+		"University": 63,
+		"City": 13,
+		"Country": 111,
+		"Continent": 6,
+		"Tag": 160,
+		"TagClass": 72
+	},
+	"MODULES": [{
+			"TYPE": "CREATE",
+			"VERTEX": "Person",
+			"ATTRIBUTE": {
+				"id": {
+					"MATH": "@",
+					"FORMAT": "%1.0f"
+				},
+				"firstName": ["Mahinda", "Carmen", "Hồ Chí", "Rahul", "Albin", "Meera", "A.", "Jack"],
+				"lastName": ["Perera", "Lepland", "Do", "Kumar", "Reddy", "Monteno", "Rao", "Smith"],
+				"gender": ["male", "female"],
+				"birthday": {
+					"MIN": "1950-01-01",
+					"MAX": "2014-12-31"
+				},
+				"creationDate": {
+					"MIN": "2010-01-01",
+					"MAX": "2014-12-31"
+				},
+				"locationIP": {
+					"LIST": {
+						"MATH": {
+							"RANGE": [-0.5, 255.5]
+						},
+						"FORMAT": "%1.0f"
+					},
+					"LEN": 4,
+					"SEP": "."
+				},
+				"browserUsed": ["Firefox", "Internet Explorer", "Chrome", "Safari"],
+				"speaks": {
+					"SET": ["ru", "pl", "en", "zh", "mg", "fr", "ar", "sk"],
+					"LEN": {
+						"RANGE": [1, 4]
+					}
+				},
+				"email": {
+					"SET": {
+						"CAT": [{
+								"REPLACE": [{
+									"GET": "firstName"
+								}, " ", "_"]
+							},
+							{
+								"REG": "\\d{4,8}"
+							},
+							"@",
+							["gmail.com", "yahoo.com", "pisem.net", "zoho.com", "gmx.com"]
+						]
+					},
+					"LEN": {
+						"RANGE": [1, 4]
+					}
+				}
+			}
+		},
+		{
+			"TYPE": "CREATE",
+			"VERTEX": "Forum",
+			"ATTRIBUTE": {
+				"id": {
+					"MATH": "@",
+					"FORMAT": "%1.0f"
+				},
+				"title": {
+					"CAT": [{
+							"MATH": {
+								"%": ["@", 32]
+							},
+							"FORMAT": "Album %1.0f of "
+						},
+						["Mahinda Perera", "Rahul Reddy", "Meera Rao"]
+					]
+				},
+				"creationDate": {
+					"MIN": "2010-01-01",
+					"MAX": "2014-12-31"
+				}
+			}
+		},
+		{
+			"TYPE": "CREATE",
+			"VERTEX": "Comment",
+			"ATTRIBUTE": {
+				"id": {
+					"MATH": "@",
+					"FORMAT": "%1.0f"
+				},
+				"creationDate": {
+					"MIN": "2010-01-01",
+					"MAX": "2014-12-31"
+				},
+				"locationIP": {
+					"LIST": {
+						"MATH": {
+							"RANGE": [-0.5, 255.5]
+						},
+						"FORMAT": "%1.0f"
+					},
+					"LEN": 4,
+					"SEP": "."
+				},
+				"browserUsed": ["Firefox", "Internet Explorer", "Chrome", "Safari"],
+				"content": {
+					"REG": "[a-zA-Z\\!\\.\\,]{3,10}"
+				},
+				"length": {
+					"MATH": {
+						"STRLEN": {
+							"GET": "content"
+						}
+					}
+				}
+			}
+		},
+		{
+			"TYPE": "CREATE",
+			"VERTEX": "Post",
+			"ATTRIBUTE": {
+				"id": {
+					"MATH": "@",
+					"FORMAT": "%1.0f"
+				},
+				"imageFile": {
+					"REG": "photo\\d{2,8}\\.jpg"
+				},
+				"creationDate": {
+					"MIN": "2010-01-01",
+					"MAX": "2014-12-31"
+				},
+				"locationIP": {
+					"CAT": [{
+							"MATH": {
+								"RANGE": [-0.5, 255.5]
+							},
+							"FORMAT": "%1.0f."
+						},
+						{
+							"MATH": {
+								"RANGE": [-0.5, 255.5]
+							},
+							"FORMAT": "%1.0f."
+						},
+						{
+							"MATH": {
+								"RANGE": [-0.5, 255.5]
+							},
+							"FORMAT": "%1.0f."
+						},
+						{
+							"MATH": {
+								"RANGE": [-0.5, 255.5]
+							},
+							"FORMAT": "%1.0f"
+						}
+					]
+				},
+				"browserUsed": ["Firefox", "Internet Explorer", "Chrome", "Safari"],
+				"lang": ["ru", "pl", "en", "zh", "mg", "fr", "ar", "sk"],
+				"content": {
+					"IF": [{
+						"STRLEN": {
+							"GET": "lang"
+						}
+					}, 1],
+					"DO": [{
+						"REG": "[a-zA-Z\\!\\.\\,]{3,10}"
+					}, ""]
+				},
+				"length": {
+					"MATH": {
+						"STRLEN": {
+							"GET": "content"
+						}
+					}
+				}
+			}
+		},
+
+		{
+			"TYPE": "CREATE",
+			"VERTEX": "Company",
+			"ATTRIBUTE": {
+				"id": {
+					"MATH": "@",
+					"FORMAT": "%1.0f"
+				},
+				"name": {
+					"REG": "[a-zA-z_]{4,12}_(Airlines|Airways|Services|Express)"
+				},
+				"url": {
+					"REG": "http://[a-zA-Z/]{4,12}"
+				}
+			}
+		},
+		{
+			"TYPE": "CREATE",
+			"VERTEX": "University",
+			"ATTRIBUTE": {
+				"id": {
+					"MATH": "@",
+					"FORMAT": "%1.0f"
+				},
+				"name": {
+					"REG": "[a-zA-Z_]{4,12}_University"
+				},
+				"url": {
+					"REG": "http://[a-zA-Z]{4,12}"
+				}
+			}
+		},
+		{
+			"TYPE": "CREATE",
+			"VERTEX": "City",
+			"ATTRIBUTE": {
+				"id": {
+					"MATH": "@",
+					"FORMAT": "%1.0f"
+				},
+				"name": ["Rewari", "Thane", "Jiaganj_Azimganj", "Baharampur", "Pondicherry", "Raichur", "Moga"],
+				"url": {
+					"CAT": [{
+						"REG": "http://[a-zA-Z]{4,12}"
+					}, {
+						"GET": "name"
+					}]
+				}
+			}
+		},
+		{
+			"TYPE": "CREATE",
+			"VERTEX": "Country",
+			"ATTRIBUTE": {
+				"id": {
+					"MATH": "@",
+					"FORMAT": "%1.0f"
+				},
+				"name": ["Singapore", "Scotland", "Rwanda", "Republic_of_Macedonia", "Uruguay", "Brazil", "Wales"],
+				"url": {
+					"CAT": ["http://dbpedia.org/resource/", {
+						"GET": "name"
+					}]
+				}
+			}
+		},
+		{
+			"TYPE": "CREATE",
+			"VERTEX": "Continent",
+			"ATTRIBUTE": {
+				"id": {
+					"MATH": "@",
+					"FORMAT": "%1.0f"
+				},
+				"name": ["Asia", "Africa", "Europe", "South_America", "North_America", "Australia"],
+				"url": {
+					"CAT": ["http://dbpedia.org/resource/", {
+						"GET": "name"
+					}]
+				}
+			}
+		},
+		{
+			"TYPE": "CREATE",
+			"VERTEX": "Tag",
+			"ATTRIBUTE": {
+				"id": {
+					"MATH": "@",
+					"FORMAT": "%1.0f"
+				},
+				"name": {
+					"REG": "[a-zA-Z]{2,8}"
+				},
+				"url": {
+					"CAT": ["http://dbpedia.org/ontology/", {
+						"GET": "name"
+					}]
+				}
+			}
+		},
+		{
+			"TYPE": "CREATE",
+			"VERTEX": "TagClass",
+			"ATTRIBUTE": {
+				"id": {
+					"MATH": "@",
+					"FORMAT": "%1.0f"
+				},
+				"name": {
+					"REG": "[a-zA-Z]{2,8}"
+				},
+				"url": {
+					"CAT": ["http://dbpedia.org/ontology/", {
+						"GET": "name"
+					}]
+				}
+			}
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Forum_CONTAINER_OF_Post",
+			"OUT_DEG": [1, 1]
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Comment_HAS_CREATOR_Person",
+			"IN_DEG": [1, 1]
+		},
+
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Post_HAS_CREATOR_Person",
+			"IN_DEG": [1, 1]
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Person_HAS_INTEREST_Tag",
+			"CARDINALITY": {
+				"*": [2, {
+					"FROM": "#"
+				}]
+			}
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Forum_HAS_MEMBER_Person",
+			"CARDINALITY": {
+				"*": [2, {
+					"FROM": "#"
+				}]
+			},
+			"IN_DEG": [1, 1000000],
+			"ATTRIBUTE": {
+				"joinDate": {
+					"MIN": "1960-01-01",
+					"MAX": "2009-01-01"
+				}
+			}
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Forum_HAS_MODERATOR_Person",
+			"IN_DEG": [1, 1]
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Comment_HAS_TAG_Tag",
+			"CARDINALITY": {
+				"*": [2, {
+					"FROM": "#"
+				}]
+			}
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Post_HAS_TAG_Tag",
+			"CARDINALITY": {
+				"*": [2, {
+					"FROM": "#"
+				}]
+			}
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Forum_HAS_TAG_Tag",
+			"CARDINALITY": {
+				"*": [2, {
+					"FROM": "#"
+				}]
+			}
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Tag_HAS_TYPE_TagClass",
+			"IN_DEG": [1, 1]
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Company_IS_LOCATED_IN_Country",
+			"IN_DEG": [1, 1]
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Comment_IS_LOCATED_IN_Country",
+			"IN_DEG": [1, 1]
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Post_IS_LOCATED_IN_Country",
+			"IN_DEG": [1, 1]
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Person_IS_LOCATED_IN_City",
+			"IN_DEG": [1, 1]
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "University_IS_LOCATED_IN_City",
+			"IN_DEG": [1, 1]
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "City_IS_PART_OF_Country",
+			"IN_DEG": [1, 1]
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Country_IS_PART_OF_Continent",
+			"IN_DEG": [1, 1]
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "TagClass_IS_SUBCLASS_OF_TagClass",
+			"CARDINALITY": {
+				"*": [0.5, {
+					"FROM": "#"
+				}]
+			},
+			"IN_DEG": [0, 1]
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Person_KNOWS_Person",
+			"CARDINALITY": {
+				"*": [2, {
+					"FROM": "#"
+				}]
+			}
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Person_LIKES_Comment",
+			"CARDINALITY": {
+				"*": [2, {
+					"FROM": "#"
+				}]
+			},
+			"ATTRIBUTE": {
+				"creationDate": {
+					"MIN": "1960-01-01",
+					"MAX": "2009-01-01"
+				}
+			}
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Person_LIKES_Post",
+			"CARDINALITY": {
+				"*": [2, {
+					"FROM": "#"
+				}]
+			},
+			"ATTRIBUTE": {
+				"creationDate": {
+					"MIN": "1960-01-01",
+					"MAX": "2009-01-01"
+				}
+			}
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Comment_REPLY_OF_Comment",
+			"IN_DEG": [1, 1]
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Comment_REPLY_OF_Post",
+			"IN_DEG": [1, 1]
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Person_STUDY_AT_University",
+			"CARDINALITY": {
+				"*": [2, {
+					"FROM": "#"
+				}]
+			},
+			"ATTRIBUTE": {
+				"classYear": {
+					"MIN": 1960,
+					"MAX": 2008
+				}
+			}
+		},
+		{
+			"TYPE": "CONNECT",
+			"EDGE": "Person_WORK_AT_Company",
+			"CARDINALITY": {
+				"*": [2, {
+					"FROM": "#"
+				}]
+			},
+			"ATTRIBUTE": {
+				"workFrom": {
+					"MIN": 1960,
+					"MAX": 2008
+				}
+			}
+		}
+	]
+}
