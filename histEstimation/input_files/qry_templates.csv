@@ -1,0 +1,110 @@
+Person|start.id == 19791209304198|10295
+Person|start.id == 32985348835009|10295
+Person|start.id != 19791209304198|10295
+Person|start.id <= 37383395354120|10295
+Person|start.id >= 14|10295
+Person|start.id <= 10604|10295
+Person|start.id >= 8796093022755|10295
+Person|start.id <= 28587302329645|10295
+Person|start.firstName == "John"|10295
+Person|start.firstName == "Jakob"|10295
+Person|start.firstName == "Huỳnh Ngọc Tâm Đoan"|10295
+Person|start.firstName == "David"|10295
+Person|start.firstName == "Akira"|10295
+Person|start.firstName == "Ashok"|10295
+Person|start.lastName == "Khan"|10295
+Person|start.firstName in ("John",  "Jakob", "Ashok", "Akira", "David")|10295
+Person|start.lastName == "Hasanov"|10295
+Person|start.lastName == "Santos"|10295
+Person|start.lastName == "Boginskaya"|10295
+Person|start.lastName == "Hoffmann"|10295
+Person|start.lastName == "Kumar"|10295
+Person|start.gender == "male"|10295
+Person|start.gender == "female"|10295
+Person|start.locationIP == "103.246.104.207"|10295
+Person|start.locationIP == "61.0.82.47"|10295
+Person|start.browserUsed == "Opera"|10295
+Person|start.browserUsed == "Safari"|10295
+Person|start.browserUsed == "Internet Explorer"|10295
+Person|start.browserUsed == "Chrome"|10295
+Person|start.browserUsed == "Opera"|10295
+Post|start.id == 412317908996|1121226
+Post|start.id == 2199029750024|1121226
+Post|start.id != 2199029693828|1121226
+Post|start.id <= 2336468744013|1121226
+Post|start.id >= 549756862464|1121226
+Post|start.id <= 824635954365|1121226
+Post|start.id >= 2336465347792|1121226
+Post|start.id <= 1374394584072|1121226
+Post|start.imageFile == ""|1121226
+Post|start.imageFile == "photo2336468743548.jpg"|1121226
+Post|start.locationIP == "115.165.166.204"|1121226
+Post|start.locationIP == "31.25.59.15"|1121226
+Post|start.locationIP == "91.191.192.127"|1121226
+Post|start.locationIP == "14.196.177.70"|1121226
+Post|start.locationIP == "41.74.32.12"|1121226
+Post|start.browserUsed == "Opera"|1121226
+Post|start.browserUsed == "Safari"|1121226
+Post|start.browserUsed == "Internet Explorer"|1121226
+Post|start.browserUsed == "Chrome"|1121226
+Post|start.browserUsed == "Firefox"|1121226
+Post|start.lang == ""|1121226
+Post|start.lang == "en"|1121226
+Post|start.lang == "vi"|1121226
+Post|start.lang == "mr"|1121226
+Post|start.lang == "ca"|1121226
+Post|start.lang == "sr"|1121226
+Post|start.content == ""|1121226
+Post|start.content == "Paul Hindemith (16 November 1895 – 28 December 1963) was a German composer, violist, violinist, teacher, music t"|1121226
+Post|start.content == "About Theodor Herzl, sh Austro-Hungarian journalist and the father of modern politica"|1121226
+Post|start.length == 0|1121226
+Post|start.length == 93|1121226
+Post|start.length == 232|1121226
+Post|start.length == 1429|1121226
+Post|start.length != 2|1121226
+Post|start.length >= 1|1121226
+Post|start.length >= 300|1121226
+Post|start.length >= 100|1121226
+Post|start.length <= 4000|1121226
+Comment|start.id == 1924150441382|1739438
+Comment|start.id == 2199028345197|1739438
+Comment|start.id != 2199028345197|1739438
+Comment|start.id <= 2061589392032|1739438
+Comment|start.id >= 2061589392032|1739438
+Comment|start.id <= 2061586962836|1739438
+Comment|start.id >= 2061586962836|1739438
+Comment|start.locationIP == "103.22.243.176"|1739438
+Comment|start.locationIP == "46.31.32.94"|1739438
+Comment|start.locationIP == "61.94.77.205"|1739438
+Comment|start.locationIP == "1.1.2.68"|1739438
+Comment|start.locationIP != "1.1.2.68"|1739438
+Comment|start.browserUsed == "Opera"|1739438
+Comment|start.browserUsed == "Safari"|1739438
+Comment|start.browserUsed == "Internet Explorer"|1739438
+Comment|start.browserUsed == "Chrome"|1739438
+Comment|start.content == "Rudyard Kipling's WorksRudyard Kipling's WorksRudyard Kipling's WorksRudyard Kipling's"|1739438
+Comment|start.content == "LOL"|1739438
+Comment|start.content == "yes"|1739438
+Comment|start.content == "About Northern Cyprus, rn Cyprus extends from the tip of the KarAbout Goats Head"|1739438
+Comment|start.length == 3|1739438
+Comment|start.length == 88|1739438
+Comment|start.length == 108|1739438
+Comment|start.length == 117|1739438
+Comment|start.length == 893|1739438
+Comment|start.length != 893|1739438
+Comment|start.length >= 122|1739438
+Comment|start.length <= 122|1739438
+Comment|start.length >= 157|1739438
+Comment|start.length <= 157|1739438
+Forum|start.id == 2336463263594|100827
+Forum|start.id == 2061585356104|100827
+Forum|start.id != 2061585356104|100827
+Forum|start.id <= 1236950659907|100827
+Forum|start.id >= 1236950659907|100827
+Forum|start.id <= 2336463263594|100827
+Forum|start.id >= 2336463263594|100827
+Forum|start.title == "Wall of Yang Zhang"|100827
+Forum|start.title == "Wall of Wei Li"|100827
+Forum|start.title == "Wall of Jie Yang"|100827
+Forum|start.title == "Album 10 of R. Singh"|100827
+Forum|start.title == "Wall of Andrew Wu"|100827
