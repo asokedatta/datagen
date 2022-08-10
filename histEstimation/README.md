@@ -40,4 +40,9 @@ To add a new vertex, update the ```edge``` variable accordingly. line 41 - 44 in
 Step 4 -
 Run script ```python3 hist_estimates.py```. Input ```00``` to exit from the script.
 
-The final result will be in ```hist_result.csv```
+The final result will be in ```hist_result.csv```. Result format will be like below example -
+```
+query_no | Vertex | where | True Cardinality | True Selectivity | estimate-10 | estimate-40 | 
+1 | Person | start.id == 19791209304198 | 1 | 9.713453132588635e-05 | 9.713453132588635E-5 | 9.713453132588635E-5 | 
+2 | Person | start.id == 32985348835009 | 1 | 9.713453132588635e-05 | 9.713453132588635E-5 | 9.713453132588635E-5 | 
+```
