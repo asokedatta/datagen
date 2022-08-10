@@ -1,0 +1,110 @@
+1 | Person | start.id == 19791209304198 | 1 | 9.713453132588635e-05
+2 | Person | start.id == 32985348835009 | 1 | 9.713453132588635e-05
+3 | Person | start.id != 19791209304198 | 10294 | 0.9999028654686741
+4 | Person | start.id <= 37383395354120 | 10272 | 0.9977659057795046
+5 | Person | start.id >= 14 | 10295 | 1.0
+6 | Person | start.id <= 10604 | 596 | 0.05789218067022826
+7 | Person | start.id >= 8796093022755 | 7873 | 0.7647401651287032
+8 | Person | start.id <= 28587302329645 | 8134 | 0.7900922778047595
+9 | Person | start.firstName == "John" | 254 | 0.024672170956775135
+10 | Person | start.firstName == "Jakob" | 1 | 9.713453132588635e-05
+11 | Person | start.firstName == "Huỳnh Ngọc Tâm Đoan" | 1 | 9.713453132588635e-05
+12 | Person | start.firstName == "David" | 102 | 0.009907722195240408
+13 | Person | start.firstName == "Akira" | 31 | 0.003011170471102477
+14 | Person | start.firstName == "Ashok" | 68 | 0.006605148130160272
+15 | Person | start.lastName == "Khan" | 318 | 0.03088878096163186
+16 | Person | start.firstName in ("John",  "Jakob", "Ashok", "Akira", "David") | 456 | 0.04429334628460418
+17 | Person | start.lastName == "Hasanov" | 1 | 9.713453132588635e-05
+18 | Person | start.lastName == "Santos" | 85 | 0.00825643516270034
+19 | Person | start.lastName == "Boginskaya" | 4 | 0.0003885381253035454
+20 | Person | start.lastName == "Hoffmann" | 16 | 0.0015541525012141815
+21 | Person | start.lastName == "Kumar" | 177 | 0.017192812044681885
+22 | Person | start.gender == "male" | 5066 | 0.49208353569694024
+23 | Person | start.gender == "female" | 5229 | 0.5079164643030597
+24 | Person | start.locationIP == "103.246.104.207" | 2 | 0.0001942690626517727
+25 | Person | start.locationIP == "61.0.82.47" | 1 | 9.713453132588635e-05
+26 | Person | start.browserUsed == "Opera" | 327 | 0.03176299174356484
+27 | Person | start.browserUsed == "Safari" | 372 | 0.036134045653229724
+28 | Person | start.browserUsed == "Internet Explorer" | 2368 | 0.2300145701796989
+29 | Person | start.browserUsed == "Chrome" | 2896 | 0.2813016027197669
+30 | Person | start.browserUsed == "Opera" | 327 | 0.03176299174356484
+31 | Post | start.id == 412317908996 | 1 | 8.918808518532392e-07
+32 | Post | start.id == 2199029750024 | 1 | 8.918808518532392e-07
+33 | Post | start.id != 2199029693828 | 1121225 | 0.9999991081191482
+34 | Post | start.id <= 2336468744013 | 1121226 | 1.0
+35 | Post | start.id >= 549756862464 | 1032015 | 0.9204344173253207
+36 | Post | start.id <= 824635954365 | 174126 | 0.15529964520979714
+37 | Post | start.id >= 2336465347792 | 21871 | 0.019506326110882197
+38 | Post | start.id <= 1374394584072 | 478372 | 0.42665082686273775
+39 | Post | start.imageFile == "" | 228792 | 0.2040552038572063
+40 | Post | start.imageFile == "photo2336468743548.jpg" | 1 | 8.918808518532392e-07
+41 | Post | start.locationIP == "115.165.166.204" | 1461 | 0.0013030379245575826
+42 | Post | start.locationIP == "31.25.59.15" | 422 | 0.00037637371948206697
+43 | Post | start.locationIP == "91.191.192.127" | 156 | 0.0001391334128891053
+44 | Post | start.locationIP == "14.196.177.70" | 42 | 3.745899577783605e-05
+45 | Post | start.locationIP == "41.74.32.12" | 1 | 8.918808518532392e-07
+46 | Post | start.browserUsed == "Opera" | 34050 | 0.030368543005602794
+47 | Post | start.browserUsed == "Safari" | 44656 | 0.03982783132035825
+48 | Post | start.browserUsed == "Internet Explorer" | 260237 | 0.2321003972437314
+49 | Post | start.browserUsed == "Chrome" | 309650 | 0.2761709057763555
+50 | Post | start.browserUsed == "Firefox" | 472633 | 0.421532322653952
+51 | Post | start.lang == "" | 892434 | 0.7959447961427937
+52 | Post | start.lang == "en" | 107554 | 0.0959253531402233
+53 | Post | start.lang == "vi" | 4748 | 0.00423465028459918
+54 | Post | start.lang == "mr" | 2378 | 0.002120892665707003
+55 | Post | start.lang == "ca" | 140 | 0.0001248633192594535
+56 | Post | start.lang == "sr" | 30 | 2.6756425555597176e-05
+57 | Post | start.content == "" | 892434 | 0.7959447961427937
+58 | Post | start.content == "Paul Hindemith (16 November 1895 – 28 December 1963) was a German composer, violist, violinist, teacher, music t" | 14 | 1.248633192594535e-05
+59 | Post | start.content == "About Theodor Herzl, sh Austro-Hungarian journalist and the father of modern politica" | 1 | 8.918808518532392e-07
+60 | Post | start.length == 0 | 892434 | 0.7959447961427937
+61 | Post | start.length == 93 | 4963 | 0.004426404667747626
+62 | Post | start.length == 232 | 331 | 0.0002952125619634222
+63 | Post | start.length == 1429 | 1 | 8.918808518532392e-07
+64 | Post | start.length != 2 | 1121226 | 1.0
+65 | Post | start.length >= 1 | 228792 | 0.2040552038572063
+66 | Post | start.length >= 300 | 15 | 1.3378212777798588e-05
+67 | Post | start.length >= 100 | 151205 | 0.13485684420446903
+68 | Post | start.length <= 4000 | 1121226 | 1.0
+69 | Comment | start.id == 1924150441382 | 1 | 5.748983292304756e-07
+70 | Comment | start.id == 2199028345197 | 1 | 5.748983292304756e-07
+71 | Comment | start.id != 2199028345197 | 1739437 | 0.9999994251016707
+72 | Comment | start.id <= 2061589392032 | 965207 | 0.5548958916615596
+73 | Comment | start.id >= 2061589392032 | 774232 | 0.4451046832367696
+74 | Comment | start.id <= 2061586962836 | 845546 | 0.48610298268751173
+75 | Comment | start.id >= 2061586962836 | 893893 | 0.5138975922108175
+76 | Comment | start.locationIP == "103.22.243.176" | 3822 | 0.0021972614143188776
+77 | Comment | start.locationIP == "46.31.32.94" | 1451 | 0.0008341774757134201
+78 | Comment | start.locationIP == "61.94.77.205" | 583 | 0.00033516572594136725
+79 | Comment | start.locationIP == "1.1.2.68" | 2 | 1.1497966584609512e-06
+80 | Comment | start.locationIP != "1.1.2.68" | 1739436 | 0.9999988502033416
+81 | Comment | start.browserUsed == "Opera" | 55989 | 0.0321879825552851
+82 | Comment | start.browserUsed == "Safari" | 72992 | 0.04196297884719087
+83 | Comment | start.browserUsed == "Internet Explorer" | 428474 | 0.2463289867186988
+84 | Comment | start.browserUsed == "Chrome" | 485715 | 0.27923674198218046
+85 | Comment | start.content == "Rudyard Kipling's WorksRudyard Kipling's WorksRudyard Kipling's WorksRudyard Kipling's" | 8 | 4.599186633843805e-06
+86 | Comment | start.content == "LOL" | 72806 | 0.041856047757954006
+87 | Comment | start.content == "yes" | 72101 | 0.04145074443584652
+88 | Comment | start.content == "About Northern Cyprus, rn Cyprus extends from the tip of the KarAbout Goats Head" | 1 | 5.748983292304756e-07
+89 | Comment | start.length == 3 | 289846 | 0.16663198113413644
+90 | Comment | start.length == 88 | 28128 | 0.016170740204594816
+91 | Comment | start.length == 108 | 1138 | 0.0006542342986642812
+92 | Comment | start.length == 117 | 983 | 0.0005651250576335575
+93 | Comment | start.length == 893 | 1 | 5.748983292304756e-07
+94 | Comment | start.length != 893 | 1739437 | 0.9999994251016707
+95 | Comment | start.length >= 122 | 65645 | 0.03773920082233457
+96 | Comment | start.length <= 122 | 1674889 | 0.962890887746502
+97 | Comment | start.length >= 157 | 28587 | 0.016434618537711606
+98 | Comment | start.length <= 157 | 1711967 | 0.9842069679977096
+99 | Forum | start.id == 2336463263594 | 1 | 9.917978319299394e-06
+100 | Forum | start.id == 2061585356104 | 1 | 9.917978319299394e-06
+101 | Forum | start.id != 2061585356104 | 92435 | 0.9167683259444395
+102 | Forum | start.id <= 1236950659907 | 32927 | 0.32656927211957115
+103 | Forum | start.id >= 1236950659907 | 59510 | 0.5902188897815069
+104 | Forum | start.id <= 2336463263594 | 92436 | 0.9167782439227588
+105 | Forum | start.id >= 2336463263594 | 1 | 9.917978319299394e-06
+106 | Forum | start.title == "Wall of Yang Zhang" | 32 | 0.0003173753062175806
+107 | Forum | start.title == "Wall of Wei Li" | 15 | 0.0001487696747894909
+108 | Forum | start.title == "Wall of Jie Yang" | 11 | 0.00010909776151229333
+109 | Forum | start.title == "Album 10 of R. Singh" | 4 | 3.9671913277197574e-05
+110 | Forum | start.title == "Wall of Andrew Wu" | 2 | 1.9835956638598787e-05

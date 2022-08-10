@@ -1,0 +1,14 @@
+use graph ldbc_snb 
+set cost_opt = true 
+set single_gpr = true 
+CREATE OR REPLACE QUERY h_28()FOR GRAPH ldbc_snb SYNTAX _v2 {
+
+
+result = 
+      SELECT start 
+      FROM Person :start
+	-(IS_LOCATED_IN>)-  :tgt
+ 	WHERE start.browserUsed == "Internet Explorer"
+ ; 
+PRINT result.size(); 
+}

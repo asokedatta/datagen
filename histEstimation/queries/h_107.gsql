@@ -1,0 +1,14 @@
+use graph ldbc_snb 
+set cost_opt = true 
+set single_gpr = true 
+CREATE OR REPLACE QUERY h_107()FOR GRAPH ldbc_snb SYNTAX _v2 {
+
+
+result = 
+      SELECT start 
+      FROM Forum :start
+	-(HAS_MEMBER>)-  :tgt
+ 	WHERE start.title == "Wall of Wei Li"
+ ; 
+PRINT result.size(); 
+}

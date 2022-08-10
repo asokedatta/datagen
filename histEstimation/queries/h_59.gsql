@@ -1,0 +1,14 @@
+use graph ldbc_snb 
+set cost_opt = true 
+set single_gpr = true 
+CREATE OR REPLACE QUERY h_59()FOR GRAPH ldbc_snb SYNTAX _v2 {
+
+
+result = 
+      SELECT start 
+      FROM Post :start
+	-(IS_LOCATED_IN>)-  :tgt
+ 	WHERE start.content == "About Theodor Herzl, sh Austro-Hungarian journalist and the father of modern politica"
+ ; 
+PRINT result.size(); 
+}

@@ -1,0 +1,14 @@
+use graph ldbc_snb 
+set cost_opt = true 
+set single_gpr = true 
+CREATE OR REPLACE QUERY h_100()FOR GRAPH ldbc_snb SYNTAX _v2 {
+
+
+result = 
+      SELECT start 
+      FROM Forum :start
+	-(HAS_MEMBER>)-  :tgt
+ 	WHERE start.id == 2061585356104
+ ; 
+PRINT result.size(); 
+}

@@ -1,0 +1,14 @@
+use graph ldbc_snb 
+set cost_opt = true 
+set single_gpr = true 
+CREATE OR REPLACE QUERY h_68()FOR GRAPH ldbc_snb SYNTAX _v2 {
+
+
+result = 
+      SELECT start 
+      FROM Post :start
+	-(IS_LOCATED_IN>)-  :tgt
+ 	WHERE start.length <= 4000
+ ; 
+PRINT result.size(); 
+}
