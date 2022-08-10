@@ -1,7 +1,7 @@
 # How to generate histogram estimates
 
 Step 1 - 
-Setting up all the input files. Two input files are located in ```input_file/``` \
+Setting up all the input files. Two input files are located in ```input_file/``` 
 
 • qry_templates.csv - This file has all benchmark queries in the below format
 ```
