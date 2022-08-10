@@ -38,6 +38,15 @@ Updating edge information. To get histogram estimates, we need at least one hop 
 To add a new vertex, update the ```edge``` variable accordingly. line 41 - 44 in ```hist_estimates.py ``` file.
 
 Step 4 -
+Increasing query timeout period as some histogram creation queries might take more than the default timeout period (16 Seconds). For LDBC SNB scale factor 1, 300 seconds timeout worked.
+```
+gadmin config entry RESTPP.Factory.DefaultQueryTimeoutSec
+gadmin config apply
+gadmin restart
+```
+
+
+Step 5 -
 Run script ```python3 hist_estimates.py```. Input ```00``` to exit from the script.
 
 The final result will be in ```hist_result.csv```. Result format will be like below example -
