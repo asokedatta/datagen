@@ -1,4 +1,4 @@
-# How to generate histogram estimates
+# How to collect histogram estimates for different bucket sizes
 
 Step 1 - 
 Setting up all the input files. Two input files are located in ```input_file/``` 
