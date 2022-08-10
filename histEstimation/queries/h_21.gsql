@@ -4,11 +4,16 @@ set single_gpr = true
 CREATE OR REPLACE QUERY h_21()FOR GRAPH ldbc_snb SYNTAX _v2 {
 
 
-result = 
+vs = 
       SELECT start 
       FROM Person :start
 	-(IS_LOCATED_IN>)-  :tgt
  	WHERE start.lastName == "Kumar"
+ ; 
+result = 
+      SELECT start 
+      FROM Person :start
+	WHERE start.lastName == "Kumar"
  ; 
 PRINT result.size(); 
 }

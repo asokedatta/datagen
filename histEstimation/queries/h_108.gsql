@@ -4,11 +4,16 @@ set single_gpr = true
 CREATE OR REPLACE QUERY h_108()FOR GRAPH ldbc_snb SYNTAX _v2 {
 
 
-result = 
+vs = 
       SELECT start 
       FROM Forum :start
 	-(HAS_MEMBER>)-  :tgt
  	WHERE start.title == "Wall of Jie Yang"
+ ; 
+result = 
+      SELECT start 
+      FROM Forum :start
+	WHERE start.title == "Wall of Jie Yang"
  ; 
 PRINT result.size(); 
 }

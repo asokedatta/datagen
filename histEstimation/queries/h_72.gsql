@@ -4,11 +4,16 @@ set single_gpr = true
 CREATE OR REPLACE QUERY h_72()FOR GRAPH ldbc_snb SYNTAX _v2 {
 
 
-result = 
+vs = 
       SELECT start 
       FROM Comment :start
 	-(IS_LOCATED_IN>)-  :tgt
  	WHERE start.id <= 2061589392032
+ ; 
+result = 
+      SELECT start 
+      FROM Comment :start
+	WHERE start.id <= 2061589392032
  ; 
 PRINT result.size(); 
 }

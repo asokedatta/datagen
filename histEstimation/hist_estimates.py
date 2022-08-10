@@ -19,7 +19,7 @@ set cost_opt = true \n\
 set single_gpr = true \n"
 
 query_no = 1
-wf1 = open("TrueCardinality.csv",'w')
+# wf1 = open("TrueCardinality.csv",'w')
 print("\n\n$$$ Collecting True Cardinality and Selectivity ..\n")
 header = "query_no | Vertex | where | True Cardinality | True Selectivity | "
 final_result["header"] = header
@@ -44,10 +44,14 @@ for line in open(PATH, 'r').readlines():
         edge = "-(HAS_MEMBER>)-  :tgt"
 
     query = query_header + create_stmt + \
-    "result = \n \
+    "vs = \n \
      SELECT start \n \
      FROM " + vertex + " :start\n" + \
      "\t"+edge + "\n "\
+     "\tWHERE " + cond + "\n ; \n" + \
+     "result = \n \
+     SELECT start \n \
+     FROM " + vertex + " :start\n" + \
      "\tWHERE " + cond + "\n ; \n" + \
      "PRINT result.size(); \n}"
     
@@ -63,7 +67,7 @@ for line in open(PATH, 'r').readlines():
     print(out_line)
     whr = vertex +": " +cond.split('.',1)[1]
     final_result[whr.strip()] = out_line + ' | '
-    wf1.writelines(out_line + '\n')
+    # wf1.writelines(out_line + '\n')
 
     # writing query for histogram estimation
     output_path = "queries/h_" + str(query_no) + ".gsql"
@@ -75,7 +79,7 @@ for line in open(PATH, 'r').readlines():
     query = "" 
     query_no += 1
     # if query_no == 3: break
-wf1.close()
+# wf1.close()
 
 ############################################################################################################################
 ##### Building histogram and adding histogram queries

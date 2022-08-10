@@ -4,11 +4,16 @@ set single_gpr = true
 CREATE OR REPLACE QUERY h_81()FOR GRAPH ldbc_snb SYNTAX _v2 {
 
 
-result = 
+vs = 
       SELECT start 
       FROM Comment :start
 	-(IS_LOCATED_IN>)-  :tgt
  	WHERE start.browserUsed == "Opera"
+ ; 
+result = 
+      SELECT start 
+      FROM Comment :start
+	WHERE start.browserUsed == "Opera"
  ; 
 PRINT result.size(); 
 }

@@ -4,11 +4,16 @@ set single_gpr = true
 CREATE OR REPLACE QUERY h_103()FOR GRAPH ldbc_snb SYNTAX _v2 {
 
 
-result = 
+vs = 
       SELECT start 
       FROM Forum :start
 	-(HAS_MEMBER>)-  :tgt
  	WHERE start.id >= 1236950659907
+ ; 
+result = 
+      SELECT start 
+      FROM Forum :start
+	WHERE start.id >= 1236950659907
  ; 
 PRINT result.size(); 
 }

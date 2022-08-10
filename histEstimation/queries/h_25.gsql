@@ -4,11 +4,16 @@ set single_gpr = true
 CREATE OR REPLACE QUERY h_25()FOR GRAPH ldbc_snb SYNTAX _v2 {
 
 
-result = 
+vs = 
       SELECT start 
       FROM Person :start
 	-(IS_LOCATED_IN>)-  :tgt
  	WHERE start.locationIP == "61.0.82.47"
+ ; 
+result = 
+      SELECT start 
+      FROM Person :start
+	WHERE start.locationIP == "61.0.82.47"
  ; 
 PRINT result.size(); 
 }

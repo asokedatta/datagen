@@ -3,11 +3,16 @@ use graph ldbc_snb
 CREATE OR REPLACE QUERY h_110()FOR GRAPH ldbc_snb SYNTAX _v2 {
 
 
-result = 
+vs = 
       SELECT start 
       FROM Forum :start
 	-(HAS_MEMBER>)-  :tgt
  	WHERE start.title == "Wall of Andrew Wu"
+ ; 
+result = 
+      SELECT start 
+      FROM Forum :start
+	WHERE start.title == "Wall of Andrew Wu"
  ; 
 PRINT result.size(); 
 }
