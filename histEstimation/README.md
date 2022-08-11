@@ -45,6 +45,7 @@ gadmin config apply
 gadmin restart
 ```
 
+Note - Script assumes log.debug is located in ```"/home/tigergraph/tigergraph/log/gsql/log.DEBUG"```
 
 Step 5 -
 Run script ```python3 hist_estimates.py```. Input ```00``` to exit from the script.
